@@ -1,26 +1,25 @@
-_prefs: 
-  saveCenter: true
+_prefs:
+  saveCenter: false
 _properties: {}
 attribution: "<a href='http://mapbox.com/about/maps' target='_blank'>Terms & Feedback</a>"
-bounds: 
+bounds:
   - -180
   - -85.0511
   - 180
   - 85.0511
-center: 
-  - -41.1328125
-  - 22.674847351188536
-  - 3
+center:
+  - -82.96875
+  - 16.846605106396304
+  - 4
 description: ''
 format: "png8:m=h"
 interactivity_layer: ''
+layers: null
 maxzoom: 21
 minzoom: 0
-mtime: 1379437640975
 name: Pirates Return
-scale: 1
 source: "mapbox:///mapbox.mapbox-streets-v4"
-styles: 
+styles:
   - style.mss
   - labels.mss
   - illustrations.mss
