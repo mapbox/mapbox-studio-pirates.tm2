@@ -5,12 +5,12 @@
 <Parameters>
   <Parameter name="attribution"><![CDATA[<a href='http://mapbox.com/about/maps' target='_blank'>Terms & Feedback</a>]]></Parameter>
   <Parameter name="bounds">-180,-85.0511,180,85.0511</Parameter>
-  <Parameter name="center">-82.96875,16.846605106396304,4</Parameter>
+  <Parameter name="center">-82.9688,16.8466,4</Parameter>
   <Parameter name="format">png8:m=h</Parameter>
   <Parameter name="maxzoom">21</Parameter>
   <Parameter name="minzoom">0</Parameter>
   <Parameter name="name"><![CDATA[Pirates Return]]></Parameter>
-  <Parameter name="source"><![CDATA[mapbox:///mapbox.mapbox-streets-v4]]></Parameter>
+  <Parameter name="source"><![CDATA[mapbox:///mapbox.mapbox-streets-v6]]></Parameter>
 </Parameters>
 
 
@@ -682,15 +682,6 @@
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
     <StyleName>admin</StyleName>  </Layer>
 
-<Style name="country_label_line" filter-mode="first">
-  <Rule>
-    <LineSymbolizer stroke="#332244" stroke-opacity="0.2" />
-  </Rule>
-</Style>
-<Layer name="country_label_line"
-  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-    <StyleName>country_label_line</StyleName>  </Layer>
-
 <Style name="country_label" filter-mode="first">
   <Rule>
     <MaxScaleDenominator>6500000</MaxScaleDenominator>
@@ -766,449 +757,277 @@
 <Style name="marine_label-text" filter-mode="first">
   <Rule>
     <MaxScaleDenominator>12500000</MaxScaleDenominator>
-    <MinScaleDenominator>6500000</MinScaleDenominator>
-    <Filter>([labelrank] = 4) and ([placement] = 'line')</Filter>
-    <TextSymbolizer size="16" character-spacing="4" line-spacing="1" placement="line" avoid-edges="true" dy="10" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <Filter>([mapnik::geometry_type] = 1) and ([labelrank] = 2)</Filter>
+    <TextSymbolizer size="36" character-spacing="8" placement="point" wrap-width="30" line-spacing="-10" face-name="Mutlu  Ornamental" fill="#224444" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>25000000</MaxScaleDenominator>
     <MinScaleDenominator>12500000</MinScaleDenominator>
-    <Filter>([labelrank] = 4) and ([placement] = 'line')</Filter>
-    <TextSymbolizer size="14" character-spacing="3" line-spacing="8" placement="line" avoid-edges="true" dy="10" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <Filter>([mapnik::geometry_type] = 1) and ([labelrank] = 2)</Filter>
+    <TextSymbolizer size="30" character-spacing="4" placement="point" wrap-width="30" line-spacing="-10" face-name="Mutlu  Ornamental" fill="#224444" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000000</MaxScaleDenominator>
     <MinScaleDenominator>25000000</MinScaleDenominator>
-    <Filter>([labelrank] = 4) and ([placement] = 'line')</Filter>
-    <TextSymbolizer size="12" character-spacing="2" line-spacing="6" placement="line" avoid-edges="true" dy="10" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <Filter>([mapnik::geometry_type] = 1) and ([labelrank] = 2)</Filter>
+    <TextSymbolizer size="24" character-spacing="2" placement="point" wrap-width="30" line-spacing="-10" face-name="Mutlu  Ornamental" fill="#224444" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
-    <MinScaleDenominator>3000000</MinScaleDenominator>
-    <Filter>([labelrank] = 4) and ([placement] = 'line')</Filter>
-    <TextSymbolizer placement="line" avoid-edges="true" dy="10" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <MaxScaleDenominator>100000000</MaxScaleDenominator>
+    <MinScaleDenominator>50000000</MinScaleDenominator>
+    <Filter>([mapnik::geometry_type] = 1) and ([labelrank] = 2)</Filter>
+    <TextSymbolizer size="19.5" character-spacing="1" placement="point" wrap-width="30" line-spacing="-10" face-name="Mutlu  Ornamental" fill="#224444" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>200000000</MaxScaleDenominator>
+    <MinScaleDenominator>100000000</MinScaleDenominator>
+    <Filter>([mapnik::geometry_type] = 1) and ([labelrank] = 2)</Filter>
+    <TextSymbolizer placement="point" wrap-width="30" line-spacing="-10" face-name="Mutlu  Ornamental" fill="#224444" size="15" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>6500000</MaxScaleDenominator>
+    <Filter>([mapnik::geometry_type] = 2) and ([labelrank] = 3)</Filter>
+    <TextSymbolizer size="36" character-spacing="8" placement="line" face-name="Mutlu  Ornamental" fill="#224444" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>12500000</MaxScaleDenominator>
     <MinScaleDenominator>6500000</MinScaleDenominator>
-    <Filter>([labelrank] = 4) and ([placement] = 'point')</Filter>
-    <TextSymbolizer size="16" character-spacing="4" line-spacing="1" placement="point" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <Filter>([mapnik::geometry_type] = 2) and ([labelrank] = 3)</Filter>
+    <TextSymbolizer size="30" character-spacing="4" placement="line" face-name="Mutlu  Ornamental" fill="#224444" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>25000000</MaxScaleDenominator>
     <MinScaleDenominator>12500000</MinScaleDenominator>
-    <Filter>([labelrank] = 4) and ([placement] = 'point')</Filter>
-    <TextSymbolizer size="14" character-spacing="3" line-spacing="8" placement="point" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <Filter>([mapnik::geometry_type] = 2) and ([labelrank] = 3)</Filter>
+    <TextSymbolizer size="24" character-spacing="2" placement="line" face-name="Mutlu  Ornamental" fill="#224444" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000000</MaxScaleDenominator>
     <MinScaleDenominator>25000000</MinScaleDenominator>
-    <Filter>([labelrank] = 4) and ([placement] = 'point')</Filter>
-    <TextSymbolizer size="12" character-spacing="2" line-spacing="6" placement="point" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <Filter>([mapnik::geometry_type] = 2) and ([labelrank] = 3)</Filter>
+    <TextSymbolizer size="19.5" character-spacing="1" placement="line" face-name="Mutlu  Ornamental" fill="#224444" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
-    <MinScaleDenominator>3000000</MinScaleDenominator>
-    <Filter>([labelrank] = 4) and ([placement] = 'point')</Filter>
-    <TextSymbolizer placement="point" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <MaxScaleDenominator>200000000</MaxScaleDenominator>
+    <MinScaleDenominator>50000000</MinScaleDenominator>
+    <Filter>([mapnik::geometry_type] = 2) and ([labelrank] = 3)</Filter>
+    <TextSymbolizer placement="line" face-name="Mutlu  Ornamental" fill="#224444" size="15" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000000</MaxScaleDenominator>
+    <Filter>([mapnik::geometry_type] = 1) and ([labelrank] = 1)</Filter>
+    <TextSymbolizer size="36" character-spacing="8" placement="point" wrap-width="30" line-spacing="-10" face-name="Mutlu  Ornamental" fill="#224444" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000000</MaxScaleDenominator>
+    <MinScaleDenominator>25000000</MinScaleDenominator>
+    <Filter>([mapnik::geometry_type] = 1) and ([labelrank] = 1)</Filter>
+    <TextSymbolizer size="30" character-spacing="4" placement="point" wrap-width="30" line-spacing="-10" face-name="Mutlu  Ornamental" fill="#224444" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>100000000</MaxScaleDenominator>
+    <MinScaleDenominator>50000000</MinScaleDenominator>
+    <Filter>([mapnik::geometry_type] = 1) and ([labelrank] = 1)</Filter>
+    <TextSymbolizer size="24" character-spacing="2" placement="point" wrap-width="30" line-spacing="-10" face-name="Mutlu  Ornamental" fill="#224444" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>200000000</MaxScaleDenominator>
+    <MinScaleDenominator>100000000</MinScaleDenominator>
+    <Filter>([mapnik::geometry_type] = 1) and ([labelrank] = 1)</Filter>
+    <TextSymbolizer size="19.5" character-spacing="1" placement="point" wrap-width="30" line-spacing="-10" face-name="Mutlu  Ornamental" fill="#224444" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000000</MaxScaleDenominator>
+    <Filter>([mapnik::geometry_type] = 2) and ([labelrank] = 1)</Filter>
+    <TextSymbolizer size="36" character-spacing="8" placement="line" face-name="Mutlu  Ornamental" fill="#224444" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000000</MaxScaleDenominator>
+    <MinScaleDenominator>25000000</MinScaleDenominator>
+    <Filter>([mapnik::geometry_type] = 2) and ([labelrank] = 1)</Filter>
+    <TextSymbolizer size="30" character-spacing="4" placement="line" face-name="Mutlu  Ornamental" fill="#224444" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>100000000</MaxScaleDenominator>
+    <MinScaleDenominator>50000000</MinScaleDenominator>
+    <Filter>([mapnik::geometry_type] = 2) and ([labelrank] = 1)</Filter>
+    <TextSymbolizer size="24" character-spacing="2" placement="line" face-name="Mutlu  Ornamental" fill="#224444" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>200000000</MaxScaleDenominator>
+    <MinScaleDenominator>100000000</MinScaleDenominator>
+    <Filter>([mapnik::geometry_type] = 2) and ([labelrank] = 1)</Filter>
+    <TextSymbolizer size="19.5" character-spacing="1" placement="line" face-name="Mutlu  Ornamental" fill="#224444" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500000</MaxScaleDenominator>
+    <Filter>([mapnik::geometry_type] = 2) and ([labelrank] = 2)</Filter>
+    <TextSymbolizer size="36" character-spacing="8" placement="line" face-name="Mutlu  Ornamental" fill="#224444" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000000</MaxScaleDenominator>
+    <MinScaleDenominator>12500000</MinScaleDenominator>
+    <Filter>([mapnik::geometry_type] = 2) and ([labelrank] = 2)</Filter>
+    <TextSymbolizer size="30" character-spacing="4" placement="line" face-name="Mutlu  Ornamental" fill="#224444" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>50000000</MaxScaleDenominator>
+    <MinScaleDenominator>25000000</MinScaleDenominator>
+    <Filter>([mapnik::geometry_type] = 2) and ([labelrank] = 2)</Filter>
+    <TextSymbolizer size="24" character-spacing="2" placement="line" face-name="Mutlu  Ornamental" fill="#224444" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>100000000</MaxScaleDenominator>
+    <MinScaleDenominator>50000000</MinScaleDenominator>
+    <Filter>([mapnik::geometry_type] = 2) and ([labelrank] = 2)</Filter>
+    <TextSymbolizer size="19.5" character-spacing="1" placement="line" face-name="Mutlu  Ornamental" fill="#224444" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>200000000</MaxScaleDenominator>
+    <MinScaleDenominator>100000000</MinScaleDenominator>
+    <Filter>([mapnik::geometry_type] = 2) and ([labelrank] = 2)</Filter>
+    <TextSymbolizer placement="line" face-name="Mutlu  Ornamental" fill="#224444" size="15" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>6500000</MaxScaleDenominator>
+    <Filter>([mapnik::geometry_type] = 1) and ([labelrank] = 3)</Filter>
+    <TextSymbolizer size="36" character-spacing="8" placement="point" wrap-width="30" line-spacing="-10" face-name="Mutlu  Ornamental" fill="#224444" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>12500000</MaxScaleDenominator>
     <MinScaleDenominator>6500000</MinScaleDenominator>
-    <Filter>([labelrank] = 4)</Filter>
-    <TextSymbolizer size="16" character-spacing="4" line-spacing="1" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <Filter>([mapnik::geometry_type] = 1) and ([labelrank] = 3)</Filter>
+    <TextSymbolizer size="30" character-spacing="4" placement="point" wrap-width="30" line-spacing="-10" face-name="Mutlu  Ornamental" fill="#224444" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>25000000</MaxScaleDenominator>
     <MinScaleDenominator>12500000</MinScaleDenominator>
-    <Filter>([labelrank] = 4)</Filter>
-    <TextSymbolizer size="14" character-spacing="3" line-spacing="8" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <Filter>([mapnik::geometry_type] = 1) and ([labelrank] = 3)</Filter>
+    <TextSymbolizer size="24" character-spacing="2" placement="point" wrap-width="30" line-spacing="-10" face-name="Mutlu  Ornamental" fill="#224444" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000000</MaxScaleDenominator>
     <MinScaleDenominator>25000000</MinScaleDenominator>
-    <Filter>([labelrank] = 4)</Filter>
-    <TextSymbolizer size="12" character-spacing="2" line-spacing="6" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <Filter>([mapnik::geometry_type] = 1) and ([labelrank] = 3)</Filter>
+    <TextSymbolizer size="19.5" character-spacing="1" placement="point" wrap-width="30" line-spacing="-10" face-name="Mutlu  Ornamental" fill="#224444" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
-    <MinScaleDenominator>3000000</MinScaleDenominator>
-    <Filter>([labelrank] = 4)</Filter>
-    <TextSymbolizer face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <MaxScaleDenominator>200000000</MaxScaleDenominator>
+    <MinScaleDenominator>50000000</MinScaleDenominator>
+    <Filter>([mapnik::geometry_type] = 1) and ([labelrank] = 3)</Filter>
+    <TextSymbolizer placement="point" wrap-width="30" line-spacing="-10" face-name="Mutlu  Ornamental" fill="#224444" size="15" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>3000000</MaxScaleDenominator>
+    <Filter>([mapnik::geometry_type] = 2) and ([labelrank] = 6)</Filter>
+    <TextSymbolizer size="24" character-spacing="2" placement="line" face-name="Mutlu  Ornamental" fill="#224444" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>6500000</MaxScaleDenominator>
     <MinScaleDenominator>3000000</MinScaleDenominator>
-    <Filter>([labelrank] = 5) and ([placement] = 'line')</Filter>
-    <TextSymbolizer size="16" character-spacing="4" line-spacing="1" placement="line" avoid-edges="true" dy="10" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <Filter>([mapnik::geometry_type] = 2) and ([labelrank] = 6)</Filter>
+    <TextSymbolizer size="19.5" character-spacing="1" placement="line" face-name="Mutlu  Ornamental" fill="#224444" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
-    <MaxScaleDenominator>12500000</MaxScaleDenominator>
+    <MaxScaleDenominator>200000000</MaxScaleDenominator>
     <MinScaleDenominator>6500000</MinScaleDenominator>
-    <Filter>([labelrank] = 5) and ([placement] = 'line')</Filter>
-    <TextSymbolizer size="14" character-spacing="3" line-spacing="8" placement="line" avoid-edges="true" dy="10" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <Filter>([mapnik::geometry_type] = 2) and ([labelrank] = 6)</Filter>
+    <TextSymbolizer placement="line" face-name="Mutlu  Ornamental" fill="#224444" size="15" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
-    <MaxScaleDenominator>25000000</MaxScaleDenominator>
-    <MinScaleDenominator>12500000</MinScaleDenominator>
-    <Filter>([labelrank] = 5) and ([placement] = 'line')</Filter>
-    <TextSymbolizer size="12" character-spacing="2" line-spacing="6" placement="line" avoid-edges="true" dy="10" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>25000000</MinScaleDenominator>
-    <Filter>([labelrank] = 5) and ([placement] = 'line')</Filter>
-    <TextSymbolizer placement="line" avoid-edges="true" dy="10" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <MaxScaleDenominator>3000000</MaxScaleDenominator>
+    <Filter>([mapnik::geometry_type] = 1) and ([labelrank] = 6)</Filter>
+    <TextSymbolizer size="24" character-spacing="2" placement="point" wrap-width="30" line-spacing="-10" face-name="Mutlu  Ornamental" fill="#224444" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>6500000</MaxScaleDenominator>
     <MinScaleDenominator>3000000</MinScaleDenominator>
-    <Filter>([labelrank] = 5) and ([placement] = 'point')</Filter>
-    <TextSymbolizer size="16" character-spacing="4" line-spacing="1" placement="point" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <Filter>([mapnik::geometry_type] = 1) and ([labelrank] = 6)</Filter>
+    <TextSymbolizer size="19.5" character-spacing="1" placement="point" wrap-width="30" line-spacing="-10" face-name="Mutlu  Ornamental" fill="#224444" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
-    <MaxScaleDenominator>12500000</MaxScaleDenominator>
+    <MaxScaleDenominator>200000000</MaxScaleDenominator>
     <MinScaleDenominator>6500000</MinScaleDenominator>
-    <Filter>([labelrank] = 5) and ([placement] = 'point')</Filter>
-    <TextSymbolizer size="14" character-spacing="3" line-spacing="8" placement="point" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000000</MaxScaleDenominator>
-    <MinScaleDenominator>12500000</MinScaleDenominator>
-    <Filter>([labelrank] = 5) and ([placement] = 'point')</Filter>
-    <TextSymbolizer size="12" character-spacing="2" line-spacing="6" placement="point" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>25000000</MinScaleDenominator>
-    <Filter>([labelrank] = 5) and ([placement] = 'point')</Filter>
-    <TextSymbolizer placement="point" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <Filter>([mapnik::geometry_type] = 1) and ([labelrank] = 6)</Filter>
+    <TextSymbolizer placement="point" wrap-width="30" line-spacing="-10" face-name="Mutlu  Ornamental" fill="#224444" size="15" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>6500000</MaxScaleDenominator>
-    <MinScaleDenominator>3000000</MinScaleDenominator>
-    <Filter>([labelrank] = 5)</Filter>
-    <TextSymbolizer size="16" character-spacing="4" line-spacing="1" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <Filter>([mapnik::geometry_type] = 2) and ([labelrank] = 5)</Filter>
+    <TextSymbolizer size="24" character-spacing="2" placement="line" face-name="Mutlu  Ornamental" fill="#224444" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>12500000</MaxScaleDenominator>
     <MinScaleDenominator>6500000</MinScaleDenominator>
-    <Filter>([labelrank] = 5)</Filter>
-    <TextSymbolizer size="14" character-spacing="3" line-spacing="8" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <Filter>([mapnik::geometry_type] = 2) and ([labelrank] = 5)</Filter>
+    <TextSymbolizer size="19.5" character-spacing="1" placement="line" face-name="Mutlu  Ornamental" fill="#224444" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
-    <MaxScaleDenominator>25000000</MaxScaleDenominator>
+    <MaxScaleDenominator>200000000</MaxScaleDenominator>
     <MinScaleDenominator>12500000</MinScaleDenominator>
-    <Filter>([labelrank] = 5)</Filter>
-    <TextSymbolizer size="12" character-spacing="2" line-spacing="6" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>25000000</MinScaleDenominator>
-    <Filter>([labelrank] = 5)</Filter>
-    <TextSymbolizer face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <Filter>([mapnik::geometry_type] = 2) and ([labelrank] = 5)</Filter>
+    <TextSymbolizer placement="line" face-name="Mutlu  Ornamental" fill="#224444" size="15" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>6500000</MaxScaleDenominator>
-    <MinScaleDenominator>3000000</MinScaleDenominator>
-    <Filter>([labelrank] = 6) and ([placement] = 'line')</Filter>
-    <TextSymbolizer size="14" character-spacing="3" line-spacing="8" placement="line" avoid-edges="true" dy="10" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <Filter>([mapnik::geometry_type] = 1) and ([labelrank] = 5)</Filter>
+    <TextSymbolizer size="24" character-spacing="2" placement="point" wrap-width="30" line-spacing="-10" face-name="Mutlu  Ornamental" fill="#224444" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>12500000</MaxScaleDenominator>
     <MinScaleDenominator>6500000</MinScaleDenominator>
-    <Filter>([labelrank] = 6) and ([placement] = 'line')</Filter>
-    <TextSymbolizer size="12" character-spacing="2" line-spacing="6" placement="line" avoid-edges="true" dy="10" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <Filter>([mapnik::geometry_type] = 1) and ([labelrank] = 5)</Filter>
+    <TextSymbolizer size="19.5" character-spacing="1" placement="point" wrap-width="30" line-spacing="-10" face-name="Mutlu  Ornamental" fill="#224444" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
+    <MaxScaleDenominator>200000000</MaxScaleDenominator>
     <MinScaleDenominator>12500000</MinScaleDenominator>
-    <Filter>([labelrank] = 6) and ([placement] = 'line')</Filter>
-    <TextSymbolizer placement="line" avoid-edges="true" dy="10" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>6500000</MaxScaleDenominator>
-    <MinScaleDenominator>3000000</MinScaleDenominator>
-    <Filter>([labelrank] = 6) and ([placement] = 'point')</Filter>
-    <TextSymbolizer size="14" character-spacing="3" line-spacing="8" placement="point" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <Filter>([mapnik::geometry_type] = 1) and ([labelrank] = 5)</Filter>
+    <TextSymbolizer placement="point" wrap-width="30" line-spacing="-10" face-name="Mutlu  Ornamental" fill="#224444" size="15" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>12500000</MaxScaleDenominator>
-    <MinScaleDenominator>6500000</MinScaleDenominator>
-    <Filter>([labelrank] = 6) and ([placement] = 'point')</Filter>
-    <TextSymbolizer size="12" character-spacing="2" line-spacing="6" placement="point" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <Filter>([mapnik::geometry_type] = 2) and ([labelrank] = 4)</Filter>
+    <TextSymbolizer size="24" character-spacing="2" placement="line" face-name="Mutlu  Ornamental" fill="#224444" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
+    <MaxScaleDenominator>25000000</MaxScaleDenominator>
     <MinScaleDenominator>12500000</MinScaleDenominator>
-    <Filter>([labelrank] = 6) and ([placement] = 'point')</Filter>
-    <TextSymbolizer placement="point" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <Filter>([mapnik::geometry_type] = 2) and ([labelrank] = 4)</Filter>
+    <TextSymbolizer size="19.5" character-spacing="1" placement="line" face-name="Mutlu  Ornamental" fill="#224444" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
-    <MaxScaleDenominator>6500000</MaxScaleDenominator>
-    <MinScaleDenominator>3000000</MinScaleDenominator>
-    <Filter>([labelrank] = 6)</Filter>
-    <TextSymbolizer size="14" character-spacing="3" line-spacing="8" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <MaxScaleDenominator>200000000</MaxScaleDenominator>
+    <MinScaleDenominator>25000000</MinScaleDenominator>
+    <Filter>([mapnik::geometry_type] = 2) and ([labelrank] = 4)</Filter>
+    <TextSymbolizer placement="line" face-name="Mutlu  Ornamental" fill="#224444" size="15" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>12500000</MaxScaleDenominator>
-    <MinScaleDenominator>6500000</MinScaleDenominator>
-    <Filter>([labelrank] = 6)</Filter>
-    <TextSymbolizer size="12" character-spacing="2" line-spacing="6" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>12500000</MinScaleDenominator>
-    <Filter>([labelrank] = 6)</Filter>
-    <TextSymbolizer face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>12500000</MaxScaleDenominator>
-    <MinScaleDenominator>6500000</MinScaleDenominator>
-    <Filter>([labelrank] = 3) and ([placement] = 'line')</Filter>
-    <TextSymbolizer size="18" character-spacing="5" placement="line" avoid-edges="true" dy="10" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <Filter>([mapnik::geometry_type] = 1) and ([labelrank] = 4)</Filter>
+    <TextSymbolizer size="24" character-spacing="2" placement="point" wrap-width="30" line-spacing="-10" face-name="Mutlu  Ornamental" fill="#224444" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>25000000</MaxScaleDenominator>
     <MinScaleDenominator>12500000</MinScaleDenominator>
-    <Filter>([labelrank] = 3) and ([placement] = 'line')</Filter>
-    <TextSymbolizer size="25" character-spacing="4" line-spacing="-10" placement="line" avoid-edges="true" dy="10" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <Filter>([mapnik::geometry_type] = 1) and ([labelrank] = 4)</Filter>
+    <TextSymbolizer size="19.5" character-spacing="1" placement="point" wrap-width="30" line-spacing="-10" face-name="Mutlu  Ornamental" fill="#224444" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
-    <MaxScaleDenominator>50000000</MaxScaleDenominator>
+    <MaxScaleDenominator>200000000</MaxScaleDenominator>
     <MinScaleDenominator>25000000</MinScaleDenominator>
-    <Filter>([labelrank] = 3) and ([placement] = 'line')</Filter>
-    <TextSymbolizer size="18" character-spacing="3" line-spacing="-10" placement="line" avoid-edges="true" dy="10" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <Filter>([mapnik::geometry_type] = 1) and ([labelrank] = 4)</Filter>
+    <TextSymbolizer placement="point" wrap-width="30" line-spacing="-10" face-name="Mutlu  Ornamental" fill="#224444" size="15" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
-    <MaxScaleDenominator>100000000</MaxScaleDenominator>
-    <MinScaleDenominator>50000000</MinScaleDenominator>
-    <Filter>([labelrank] = 3) and ([placement] = 'line')</Filter>
-    <TextSymbolizer size="14" character-spacing="2" line-spacing="-10" placement="line" avoid-edges="true" dy="10" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <MaxScaleDenominator>200000000</MaxScaleDenominator>
+    <Filter>([mapnik::geometry_type] = 2)</Filter>
+    <TextSymbolizer placement="line" face-name="Mutlu  Ornamental" fill="#224444" size="15" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
-    <MinScaleDenominator>3000000</MinScaleDenominator>
-    <Filter>([labelrank] = 3) and ([placement] = 'line')</Filter>
-    <TextSymbolizer placement="line" avoid-edges="true" dy="10" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>12500000</MaxScaleDenominator>
-    <MinScaleDenominator>6500000</MinScaleDenominator>
-    <Filter>([labelrank] = 3) and ([placement] = 'point')</Filter>
-    <TextSymbolizer size="18" character-spacing="5" placement="point" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000000</MaxScaleDenominator>
-    <MinScaleDenominator>12500000</MinScaleDenominator>
-    <Filter>([labelrank] = 3) and ([placement] = 'point')</Filter>
-    <TextSymbolizer size="25" character-spacing="4" line-spacing="-10" placement="point" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>50000000</MaxScaleDenominator>
-    <MinScaleDenominator>25000000</MinScaleDenominator>
-    <Filter>([labelrank] = 3) and ([placement] = 'point')</Filter>
-    <TextSymbolizer size="18" character-spacing="3" line-spacing="-10" placement="point" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>100000000</MaxScaleDenominator>
-    <MinScaleDenominator>50000000</MinScaleDenominator>
-    <Filter>([labelrank] = 3) and ([placement] = 'point')</Filter>
-    <TextSymbolizer size="14" character-spacing="2" line-spacing="-10" placement="point" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>3000000</MinScaleDenominator>
-    <Filter>([labelrank] = 3) and ([placement] = 'point')</Filter>
-    <TextSymbolizer placement="point" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>12500000</MaxScaleDenominator>
-    <MinScaleDenominator>6500000</MinScaleDenominator>
-    <Filter>([labelrank] = 3)</Filter>
-    <TextSymbolizer size="18" character-spacing="5" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000000</MaxScaleDenominator>
-    <MinScaleDenominator>12500000</MinScaleDenominator>
-    <Filter>([labelrank] = 3)</Filter>
-    <TextSymbolizer size="25" character-spacing="4" line-spacing="-10" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>50000000</MaxScaleDenominator>
-    <MinScaleDenominator>25000000</MinScaleDenominator>
-    <Filter>([labelrank] = 3)</Filter>
-    <TextSymbolizer size="18" character-spacing="3" line-spacing="-10" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>100000000</MaxScaleDenominator>
-    <MinScaleDenominator>50000000</MinScaleDenominator>
-    <Filter>([labelrank] = 3)</Filter>
-    <TextSymbolizer size="14" character-spacing="2" line-spacing="-10" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>3000000</MinScaleDenominator>
-    <Filter>([labelrank] = 3)</Filter>
-    <TextSymbolizer face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>12500000</MaxScaleDenominator>
-    <MinScaleDenominator>6500000</MinScaleDenominator>
-    <Filter>([labelrank] = 2) and ([placement] = 'line')</Filter>
-    <TextSymbolizer size="35" character-spacing="5" placement="line" avoid-edges="true" dy="10" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000000</MaxScaleDenominator>
-    <MinScaleDenominator>12500000</MinScaleDenominator>
-    <Filter>([labelrank] = 2) and ([placement] = 'line')</Filter>
-    <TextSymbolizer size="30" character-spacing="4" placement="line" avoid-edges="true" dy="10" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>50000000</MaxScaleDenominator>
-    <MinScaleDenominator>25000000</MinScaleDenominator>
-    <Filter>([labelrank] = 2) and ([placement] = 'line')</Filter>
-    <TextSymbolizer size="24" character-spacing="2" placement="line" avoid-edges="true" dy="10" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>100000000</MaxScaleDenominator>
-    <MinScaleDenominator>50000000</MinScaleDenominator>
-    <Filter>([labelrank] = 2) and ([placement] = 'line')</Filter>
-    <TextSymbolizer size="18" character-spacing="1" placement="line" avoid-edges="true" dy="10" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>3000000</MinScaleDenominator>
-    <Filter>([labelrank] = 2) and ([placement] = 'line')</Filter>
-    <TextSymbolizer placement="line" avoid-edges="true" dy="10" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>12500000</MaxScaleDenominator>
-    <MinScaleDenominator>6500000</MinScaleDenominator>
-    <Filter>([labelrank] = 2) and ([placement] = 'point')</Filter>
-    <TextSymbolizer size="35" character-spacing="5" placement="point" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000000</MaxScaleDenominator>
-    <MinScaleDenominator>12500000</MinScaleDenominator>
-    <Filter>([labelrank] = 2) and ([placement] = 'point')</Filter>
-    <TextSymbolizer size="30" character-spacing="4" placement="point" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>50000000</MaxScaleDenominator>
-    <MinScaleDenominator>25000000</MinScaleDenominator>
-    <Filter>([labelrank] = 2) and ([placement] = 'point')</Filter>
-    <TextSymbolizer size="24" character-spacing="2" placement="point" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>100000000</MaxScaleDenominator>
-    <MinScaleDenominator>50000000</MinScaleDenominator>
-    <Filter>([labelrank] = 2) and ([placement] = 'point')</Filter>
-    <TextSymbolizer size="18" character-spacing="1" placement="point" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>3000000</MinScaleDenominator>
-    <Filter>([labelrank] = 2) and ([placement] = 'point')</Filter>
-    <TextSymbolizer placement="point" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>12500000</MaxScaleDenominator>
-    <MinScaleDenominator>6500000</MinScaleDenominator>
-    <Filter>([labelrank] = 2)</Filter>
-    <TextSymbolizer size="35" character-spacing="5" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000000</MaxScaleDenominator>
-    <MinScaleDenominator>12500000</MinScaleDenominator>
-    <Filter>([labelrank] = 2)</Filter>
-    <TextSymbolizer size="30" character-spacing="4" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>50000000</MaxScaleDenominator>
-    <MinScaleDenominator>25000000</MinScaleDenominator>
-    <Filter>([labelrank] = 2)</Filter>
-    <TextSymbolizer size="24" character-spacing="2" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>100000000</MaxScaleDenominator>
-    <MinScaleDenominator>50000000</MinScaleDenominator>
-    <Filter>([labelrank] = 2)</Filter>
-    <TextSymbolizer size="18" character-spacing="1" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>3000000</MinScaleDenominator>
-    <Filter>([labelrank] = 2)</Filter>
-    <TextSymbolizer face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000000</MaxScaleDenominator>
-    <MinScaleDenominator>12500000</MinScaleDenominator>
-    <Filter>([labelrank] = 1) and ([placement] = 'line')</Filter>
-    <TextSymbolizer size="40" character-spacing="20" placement="line" avoid-edges="true" dy="10" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>50000000</MaxScaleDenominator>
-    <MinScaleDenominator>25000000</MinScaleDenominator>
-    <Filter>([labelrank] = 1) and ([placement] = 'line')</Filter>
-    <TextSymbolizer size="35" character-spacing="16" placement="line" avoid-edges="true" dy="10" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>100000000</MaxScaleDenominator>
-    <MinScaleDenominator>50000000</MinScaleDenominator>
-    <Filter>([labelrank] = 1) and ([placement] = 'line')</Filter>
-    <TextSymbolizer size="30" character-spacing="8" placement="line" avoid-edges="true" dy="10" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>3000000</MinScaleDenominator>
-    <Filter>([labelrank] = 1) and ([placement] = 'line')</Filter>
-    <TextSymbolizer placement="line" avoid-edges="true" dy="10" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000000</MaxScaleDenominator>
-    <MinScaleDenominator>12500000</MinScaleDenominator>
-    <Filter>([labelrank] = 1) and ([placement] = 'point')</Filter>
-    <TextSymbolizer size="40" character-spacing="20" placement="point" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>50000000</MaxScaleDenominator>
-    <MinScaleDenominator>25000000</MinScaleDenominator>
-    <Filter>([labelrank] = 1) and ([placement] = 'point')</Filter>
-    <TextSymbolizer size="35" character-spacing="16" placement="point" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>100000000</MaxScaleDenominator>
-    <MinScaleDenominator>50000000</MinScaleDenominator>
-    <Filter>([labelrank] = 1) and ([placement] = 'point')</Filter>
-    <TextSymbolizer size="30" character-spacing="8" placement="point" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>3000000</MinScaleDenominator>
-    <Filter>([labelrank] = 1) and ([placement] = 'point')</Filter>
-    <TextSymbolizer placement="point" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000000</MaxScaleDenominator>
-    <MinScaleDenominator>12500000</MinScaleDenominator>
-    <Filter>([labelrank] = 1)</Filter>
-    <TextSymbolizer size="40" character-spacing="20" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>50000000</MaxScaleDenominator>
-    <MinScaleDenominator>25000000</MinScaleDenominator>
-    <Filter>([labelrank] = 1)</Filter>
-    <TextSymbolizer size="35" character-spacing="16" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>100000000</MaxScaleDenominator>
-    <MinScaleDenominator>50000000</MinScaleDenominator>
-    <Filter>([labelrank] = 1)</Filter>
-    <TextSymbolizer size="30" character-spacing="8" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>3000000</MinScaleDenominator>
-    <Filter>([labelrank] = 1)</Filter>
-    <TextSymbolizer face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>3000000</MinScaleDenominator>
-    <Filter>([placement] = 'line')</Filter>
-    <TextSymbolizer placement="line" avoid-edges="true" dy="10" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>3000000</MinScaleDenominator>
-    <Filter>([placement] = 'point')</Filter>
-    <TextSymbolizer placement="point" face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>3000000</MinScaleDenominator>
-    <TextSymbolizer face-name="Mutlu  Ornamental" fill="#224444" wrap-width="80" wrap-before="true" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <MaxScaleDenominator>200000000</MaxScaleDenominator>
+    <Filter>([mapnik::geometry_type] = 1)</Filter>
+    <TextSymbolizer placement="point" wrap-width="30" line-spacing="-10" face-name="Mutlu  Ornamental" fill="#224444" size="15" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
 </Style>
 <Style name="marine_label-illo" filter-mode="first" comp-op="overlay">
@@ -1321,324 +1140,276 @@
 
 <Style name="place_label" filter-mode="first">
   <Rule>
-    <MaxScaleDenominator>400000</MaxScaleDenominator>
-    <MinScaleDenominator>200000</MinScaleDenominator>
-    <Filter>([type] = 'city') and ([scalerank] &gt;= 2) and ([scalerank] &lt;= 3)</Filter>
-    <TextSymbolizer size="32" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
     <MaxScaleDenominator>750000</MaxScaleDenominator>
-    <MinScaleDenominator>400000</MinScaleDenominator>
-    <Filter>([type] = 'city') and ([scalerank] &gt;= 2) and ([scalerank] &lt;= 3)</Filter>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([type] = 'city') and ([localrank] &lt;= 2) and ([scalerank] &gt;= 2) and ([scalerank] &lt;= 3)</Filter>
     <TextSymbolizer size="28" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
-    <MaxScaleDenominator>1500000</MaxScaleDenominator>
-    <MinScaleDenominator>750000</MinScaleDenominator>
-    <Filter>([type] = 'city') and ([scalerank] &gt;= 2) and ([scalerank] &lt;= 3)</Filter>
-    <TextSymbolizer size="26" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
     <MaxScaleDenominator>3000000</MaxScaleDenominator>
-    <MinScaleDenominator>1500000</MinScaleDenominator>
-    <Filter>([type] = 'city') and ([scalerank] &gt;= 2) and ([scalerank] &lt;= 3)</Filter>
+    <MinScaleDenominator>750000</MinScaleDenominator>
+    <Filter>([type] = 'city') and ([localrank] &lt;= 2) and ([scalerank] &gt;= 2) and ([scalerank] &lt;= 3)</Filter>
     <TextSymbolizer size="24" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
-    <MaxScaleDenominator>6500000</MaxScaleDenominator>
+    <MaxScaleDenominator>12500000</MaxScaleDenominator>
     <MinScaleDenominator>3000000</MinScaleDenominator>
-    <Filter>([type] = 'city') and ([scalerank] &gt;= 2) and ([scalerank] &lt;= 3)</Filter>
-    <TextSymbolizer size="20" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>6500000</MinScaleDenominator>
-    <Filter>([type] = 'city') and ([scalerank] &gt;= 2) and ([scalerank] &lt;= 3)</Filter>
+    <Filter>([type] = 'city') and ([localrank] &lt;= 2) and ([scalerank] &gt;= 2) and ([scalerank] &lt;= 3)</Filter>
     <TextSymbolizer size="18" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
-    <MaxScaleDenominator>200000</MaxScaleDenominator>
-    <MinScaleDenominator>100000</MinScaleDenominator>
-    <Filter>([type] = 'city') and ([scalerank] &gt;= 2) and ([scalerank] &lt;= 3)</Filter>
-    <TextSymbolizer size="36" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <MaxScaleDenominator>25000000</MaxScaleDenominator>
+    <MinScaleDenominator>12500000</MinScaleDenominator>
+    <Filter>([type] = 'city') and ([localrank] &lt;= 2) and ([scalerank] &gt;= 2) and ([scalerank] &lt;= 3)</Filter>
+    <TextSymbolizer size="17" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
-    <MaxScaleDenominator>50000</MaxScaleDenominator>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([type] = 'city') and ([scalerank] &gt;= 2) and ([scalerank] &lt;= 3)</Filter>
-    <TextSymbolizer size="40" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <MaxScaleDenominator>100000000</MaxScaleDenominator>
+    <MinScaleDenominator>25000000</MinScaleDenominator>
+    <Filter>([type] = 'city') and ([localrank] &lt;= 2) and ([scalerank] &gt;= 2) and ([scalerank] &lt;= 3)</Filter>
+    <TextSymbolizer size="14" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
-    <MaxScaleDenominator>100000</MaxScaleDenominator>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([type] = 'city') and ([scalerank] &gt;= 2) and ([scalerank] &lt;= 3)</Filter>
-    <TextSymbolizer size="36" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>400000</MaxScaleDenominator>
-    <MinScaleDenominator>200000</MinScaleDenominator>
-    <Filter>([type] = 'city') and ([scalerank] &gt;= 0) and ([scalerank] &lt;= 1)</Filter>
-    <TextSymbolizer size="34" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <MinScaleDenominator>100000000</MinScaleDenominator>
+    <Filter>([type] = 'city') and ([localrank] &lt;= 2) and ([scalerank] &gt;= 2) and ([scalerank] &lt;= 3)</Filter>
+    <TextSymbolizer face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>750000</MaxScaleDenominator>
-    <MinScaleDenominator>400000</MinScaleDenominator>
-    <Filter>([type] = 'city') and ([scalerank] &gt;= 0) and ([scalerank] &lt;= 1)</Filter>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([type] = 'city') and ([localrank] &lt;= 2) and ([scalerank] &gt;= 0) and ([scalerank] &lt;= 1)</Filter>
     <TextSymbolizer size="32" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
-    <MaxScaleDenominator>1500000</MaxScaleDenominator>
-    <MinScaleDenominator>750000</MinScaleDenominator>
-    <Filter>([type] = 'city') and ([scalerank] &gt;= 0) and ([scalerank] &lt;= 1)</Filter>
-    <TextSymbolizer size="30" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
     <MaxScaleDenominator>3000000</MaxScaleDenominator>
-    <MinScaleDenominator>1500000</MinScaleDenominator>
-    <Filter>([type] = 'city') and ([scalerank] &gt;= 0) and ([scalerank] &lt;= 1)</Filter>
+    <MinScaleDenominator>750000</MinScaleDenominator>
+    <Filter>([type] = 'city') and ([localrank] &lt;= 2) and ([scalerank] &gt;= 0) and ([scalerank] &lt;= 1)</Filter>
     <TextSymbolizer size="28" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
-    <MaxScaleDenominator>6500000</MaxScaleDenominator>
+    <MaxScaleDenominator>12500000</MaxScaleDenominator>
     <MinScaleDenominator>3000000</MinScaleDenominator>
-    <Filter>([type] = 'city') and ([scalerank] &gt;= 0) and ([scalerank] &lt;= 1)</Filter>
-    <TextSymbolizer size="24" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>6500000</MinScaleDenominator>
-    <Filter>([type] = 'city') and ([scalerank] &gt;= 0) and ([scalerank] &lt;= 1)</Filter>
-    <TextSymbolizer size="22" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>200000</MaxScaleDenominator>
-    <MinScaleDenominator>100000</MinScaleDenominator>
-    <Filter>([type] = 'city') and ([scalerank] &gt;= 0) and ([scalerank] &lt;= 1)</Filter>
-    <TextSymbolizer size="36" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>50000</MaxScaleDenominator>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([type] = 'city') and ([scalerank] &gt;= 0) and ([scalerank] &lt;= 1)</Filter>
-    <TextSymbolizer size="40" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>100000</MaxScaleDenominator>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([type] = 'city') and ([scalerank] &gt;= 0) and ([scalerank] &lt;= 1)</Filter>
-    <TextSymbolizer size="36" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>200000</MaxScaleDenominator>
-    <MinScaleDenominator>100000</MinScaleDenominator>
-    <Filter>([type] = 'city') and ([scalerank] &gt;= 4)</Filter>
-    <TextSymbolizer size="32" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>400000</MaxScaleDenominator>
-    <MinScaleDenominator>200000</MinScaleDenominator>
-    <Filter>([type] = 'city') and ([scalerank] &gt;= 4)</Filter>
-    <TextSymbolizer size="30" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>750000</MaxScaleDenominator>
-    <MinScaleDenominator>400000</MinScaleDenominator>
-    <Filter>([type] = 'city') and ([scalerank] &gt;= 4)</Filter>
-    <TextSymbolizer size="26" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>1500000</MaxScaleDenominator>
-    <MinScaleDenominator>750000</MinScaleDenominator>
-    <Filter>([type] = 'city') and ([scalerank] &gt;= 4)</Filter>
-    <TextSymbolizer size="24" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>3000000</MaxScaleDenominator>
-    <MinScaleDenominator>1500000</MinScaleDenominator>
-    <Filter>([type] = 'city') and ([scalerank] &gt;= 4)</Filter>
+    <Filter>([type] = 'city') and ([localrank] &lt;= 2) and ([scalerank] &gt;= 0) and ([scalerank] &lt;= 1)</Filter>
     <TextSymbolizer size="20" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
-    <MaxScaleDenominator>6500000</MaxScaleDenominator>
-    <MinScaleDenominator>3000000</MinScaleDenominator>
-    <Filter>([type] = 'city') and ([scalerank] &gt;= 4)</Filter>
+    <MaxScaleDenominator>25000000</MaxScaleDenominator>
+    <MinScaleDenominator>12500000</MinScaleDenominator>
+    <Filter>([type] = 'city') and ([localrank] &lt;= 2) and ([scalerank] &gt;= 0) and ([scalerank] &lt;= 1)</Filter>
     <TextSymbolizer size="18" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
-    <MinScaleDenominator>6500000</MinScaleDenominator>
-    <Filter>([type] = 'city') and ([scalerank] &gt;= 4)</Filter>
+    <MaxScaleDenominator>100000000</MaxScaleDenominator>
+    <MinScaleDenominator>25000000</MinScaleDenominator>
+    <Filter>([type] = 'city') and ([localrank] &lt;= 2) and ([scalerank] &gt;= 0) and ([scalerank] &lt;= 1)</Filter>
     <TextSymbolizer size="16" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
-    <MaxScaleDenominator>50000</MaxScaleDenominator>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([type] = 'city') and ([scalerank] &gt;= 4)</Filter>
-    <TextSymbolizer size="40" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>100000</MaxScaleDenominator>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([type] = 'city') and ([scalerank] &gt;= 4)</Filter>
-    <TextSymbolizer size="36" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <MinScaleDenominator>100000000</MinScaleDenominator>
+    <Filter>([type] = 'city') and ([localrank] &lt;= 2) and ([scalerank] &gt;= 0) and ([scalerank] &lt;= 1)</Filter>
+    <TextSymbolizer face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
-    <MinScaleDenominator>100000</MinScaleDenominator>
-    <Filter>([type] = 'city') and ([scalerank] &lt;= 3)</Filter>
-    <TextSymbolizer size="36" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([type] = 'city') and ([scalerank] &lt;= 3)</Filter>
-    <TextSymbolizer size="40" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>100000</MaxScaleDenominator>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([type] = 'city') and ([scalerank] &lt;= 3)</Filter>
-    <TextSymbolizer size="36" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>400000</MaxScaleDenominator>
-    <MinScaleDenominator>200000</MinScaleDenominator>
-    <Filter>([type] = 'city') and ([scalerank] &lt;= 3)</Filter>
-    <TextSymbolizer size="26" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <Filter>([type] = 'city') and ([localrank] &lt;= 2) and ([scalerank] &gt;= 4)</Filter>
+    <TextSymbolizer size="32" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>750000</MaxScaleDenominator>
-    <MinScaleDenominator>400000</MinScaleDenominator>
-    <Filter>([type] = 'city') and ([scalerank] &lt;= 3)</Filter>
-    <TextSymbolizer size="22" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>1500000</MaxScaleDenominator>
-    <MinScaleDenominator>750000</MinScaleDenominator>
-    <Filter>([type] = 'city') and ([scalerank] &lt;= 3)</Filter>
-    <TextSymbolizer size="20" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <MinScaleDenominator>200000</MinScaleDenominator>
+    <Filter>([type] = 'city') and ([localrank] &lt;= 2) and ([scalerank] &gt;= 4)</Filter>
+    <TextSymbolizer size="26" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>3000000</MaxScaleDenominator>
-    <MinScaleDenominator>1500000</MinScaleDenominator>
-    <Filter>([type] = 'city') and ([scalerank] &lt;= 3)</Filter>
+    <MinScaleDenominator>750000</MinScaleDenominator>
+    <Filter>([type] = 'city') and ([localrank] &lt;= 2) and ([scalerank] &gt;= 4)</Filter>
+    <TextSymbolizer size="20" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500000</MaxScaleDenominator>
+    <MinScaleDenominator>3000000</MinScaleDenominator>
+    <Filter>([type] = 'city') and ([localrank] &lt;= 2) and ([scalerank] &gt;= 4)</Filter>
     <TextSymbolizer size="16" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
+    <MaxScaleDenominator>25000000</MaxScaleDenominator>
+    <MinScaleDenominator>12500000</MinScaleDenominator>
+    <Filter>([type] = 'city') and ([localrank] &lt;= 2) and ([scalerank] &gt;= 4)</Filter>
+    <TextSymbolizer size="14" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>100000000</MaxScaleDenominator>
+    <MinScaleDenominator>25000000</MinScaleDenominator>
+    <Filter>([type] = 'city') and ([localrank] &lt;= 2) and ([scalerank] &gt;= 4)</Filter>
+    <TextSymbolizer size="12" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>100000000</MinScaleDenominator>
+    <Filter>([type] = 'city') and ([localrank] &lt;= 2) and ([scalerank] &gt;= 4)</Filter>
+    <TextSymbolizer face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>200000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([type] = 'city') and ([localrank] &lt;= 2) and ([scalerank] &lt;= 3)</Filter>
+    <TextSymbolizer size="36" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>750000</MaxScaleDenominator>
+    <MinScaleDenominator>200000</MinScaleDenominator>
+    <Filter>([type] = 'city') and ([localrank] &lt;= 2) and ([scalerank] &lt;= 3)</Filter>
+    <TextSymbolizer size="22" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>3000000</MaxScaleDenominator>
+    <MinScaleDenominator>750000</MinScaleDenominator>
+    <Filter>([type] = 'city') and ([localrank] &lt;= 2) and ([scalerank] &lt;= 3)</Filter>
+    <TextSymbolizer size="16" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>12500000</MaxScaleDenominator>
     <MinScaleDenominator>3000000</MinScaleDenominator>
-    <Filter>([type] = 'city') and ([scalerank] &lt;= 3)</Filter>
-    <TextSymbolizer face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" size="14" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <Filter>([type] = 'city') and ([localrank] &lt;= 2) and ([scalerank] &lt;= 3)</Filter>
+    <TextSymbolizer size="14" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000000</MaxScaleDenominator>
+    <MinScaleDenominator>12500000</MinScaleDenominator>
+    <Filter>([type] = 'city') and ([localrank] &lt;= 2) and ([scalerank] &lt;= 3)</Filter>
+    <TextSymbolizer size="12" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>100000000</MaxScaleDenominator>
+    <MinScaleDenominator>25000000</MinScaleDenominator>
+    <Filter>([type] = 'city') and ([localrank] &lt;= 2) and ([scalerank] &lt;= 3)</Filter>
+    <TextSymbolizer size="10" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>100000000</MinScaleDenominator>
+    <Filter>([type] = 'city') and ([localrank] &lt;= 2) and ([scalerank] &lt;= 3)</Filter>
+    <TextSymbolizer face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([type] = 'city')</Filter>
+    <Filter>([type] = 'city') and ([localrank] &lt;= 2)</Filter>
     <TextSymbolizer size="40" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([type] = 'city')</Filter>
+    <Filter>([type] = 'city') and ([localrank] &lt;= 2)</Filter>
     <TextSymbolizer size="36" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
-    <Filter>([type] = 'city')</Filter>
+    <Filter>([type] = 'city') and ([localrank] &lt;= 2)</Filter>
     <TextSymbolizer size="28" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
-    <MaxScaleDenominator>400000</MaxScaleDenominator>
-    <MinScaleDenominator>200000</MinScaleDenominator>
-    <Filter>([type] = 'city')</Filter>
-    <TextSymbolizer size="26" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
     <MaxScaleDenominator>750000</MaxScaleDenominator>
-    <MinScaleDenominator>400000</MinScaleDenominator>
-    <Filter>([type] = 'city')</Filter>
+    <MinScaleDenominator>200000</MinScaleDenominator>
+    <Filter>([type] = 'city') and ([localrank] &lt;= 2)</Filter>
     <TextSymbolizer size="22" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
-    <MaxScaleDenominator>1500000</MaxScaleDenominator>
-    <MinScaleDenominator>750000</MinScaleDenominator>
-    <Filter>([type] = 'city')</Filter>
-    <TextSymbolizer size="20" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
-  </Rule>
-  <Rule>
     <MaxScaleDenominator>3000000</MaxScaleDenominator>
-    <MinScaleDenominator>1500000</MinScaleDenominator>
-    <Filter>([type] = 'city')</Filter>
+    <MinScaleDenominator>750000</MinScaleDenominator>
+    <Filter>([type] = 'city') and ([localrank] &lt;= 2)</Filter>
     <TextSymbolizer size="16" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
+    <MaxScaleDenominator>12500000</MaxScaleDenominator>
     <MinScaleDenominator>3000000</MinScaleDenominator>
-    <Filter>([type] = 'city')</Filter>
-    <TextSymbolizer face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" size="14" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+    <Filter>([type] = 'city') and ([localrank] &lt;= 2)</Filter>
+    <TextSymbolizer size="14" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000000</MaxScaleDenominator>
+    <MinScaleDenominator>12500000</MinScaleDenominator>
+    <Filter>([type] = 'city') and ([localrank] &lt;= 2)</Filter>
+    <TextSymbolizer size="12" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>100000000</MaxScaleDenominator>
+    <MinScaleDenominator>25000000</MinScaleDenominator>
+    <Filter>([type] = 'city') and ([localrank] &lt;= 2)</Filter>
+    <TextSymbolizer size="10" face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>100000000</MinScaleDenominator>
+    <Filter>([type] = 'city') and ([localrank] &lt;= 2)</Filter>
+    <TextSymbolizer face-name="Quintessential Regular" fill="#442211" halo-fill="#fff8f0" halo-radius="3" ><![CDATA[[name_en].replace('([Aa]r)','\1rr')]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>5000</MaxScaleDenominator>
-    <Filter>([type] = 'hamlet')</Filter>
+    <Filter>([type] = 'neighbourhood')</Filter>
     <TextSymbolizer size="28" face-name="Quintessential Regular" fill="#775544" halo-fill="#fff8f0" halo-radius="2" wrap-before="true" wrap-width="80" minimum-distance="40" ><![CDATA[[name_en]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>12500</MaxScaleDenominator>
     <MinScaleDenominator>5000</MinScaleDenominator>
-    <Filter>([type] = 'hamlet')</Filter>
+    <Filter>([type] = 'neighbourhood')</Filter>
     <TextSymbolizer size="24" face-name="Quintessential Regular" fill="#775544" halo-fill="#fff8f0" halo-radius="2" wrap-before="true" wrap-width="80" minimum-distance="40" ><![CDATA[[name_en]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
     <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([type] = 'hamlet')</Filter>
+    <Filter>([type] = 'neighbourhood')</Filter>
     <TextSymbolizer size="20" face-name="Quintessential Regular" fill="#775544" halo-fill="#fff8f0" halo-radius="2" wrap-before="true" wrap-width="80" minimum-distance="40" ><![CDATA[[name_en]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([type] = 'hamlet')</Filter>
+    <Filter>([type] = 'neighbourhood')</Filter>
     <TextSymbolizer size="18" face-name="Quintessential Regular" fill="#775544" halo-fill="#fff8f0" halo-radius="2" wrap-before="true" wrap-width="80" minimum-distance="40" ><![CDATA[[name_en]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([type] = 'hamlet')</Filter>
+    <Filter>([type] = 'neighbourhood')</Filter>
     <TextSymbolizer size="16" face-name="Quintessential Regular" fill="#775544" halo-fill="#fff8f0" halo-radius="2" wrap-before="true" wrap-width="80" minimum-distance="40" ><![CDATA[[name_en]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MinScaleDenominator>100000</MinScaleDenominator>
-    <Filter>([type] = 'hamlet')</Filter>
+    <Filter>([type] = 'neighbourhood')</Filter>
     <TextSymbolizer face-name="Quintessential Regular" fill="#775544" halo-fill="#fff8f0" halo-radius="2" wrap-before="true" wrap-width="80" minimum-distance="40" size="14" ><![CDATA[[name_en]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>5000</MaxScaleDenominator>
-    <Filter>([type] = 'neighbourhood')</Filter>
+    <Filter>([type] = 'hamlet')</Filter>
     <TextSymbolizer size="28" face-name="Quintessential Regular" fill="#775544" halo-fill="#fff8f0" halo-radius="2" wrap-before="true" wrap-width="80" minimum-distance="40" ><![CDATA[[name_en]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>12500</MaxScaleDenominator>
     <MinScaleDenominator>5000</MinScaleDenominator>
-    <Filter>([type] = 'neighbourhood')</Filter>
+    <Filter>([type] = 'hamlet')</Filter>
     <TextSymbolizer size="24" face-name="Quintessential Regular" fill="#775544" halo-fill="#fff8f0" halo-radius="2" wrap-before="true" wrap-width="80" minimum-distance="40" ><![CDATA[[name_en]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
     <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([type] = 'neighbourhood')</Filter>
+    <Filter>([type] = 'hamlet')</Filter>
     <TextSymbolizer size="20" face-name="Quintessential Regular" fill="#775544" halo-fill="#fff8f0" halo-radius="2" wrap-before="true" wrap-width="80" minimum-distance="40" ><![CDATA[[name_en]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([type] = 'neighbourhood')</Filter>
+    <Filter>([type] = 'hamlet')</Filter>
     <TextSymbolizer size="18" face-name="Quintessential Regular" fill="#775544" halo-fill="#fff8f0" halo-radius="2" wrap-before="true" wrap-width="80" minimum-distance="40" ><![CDATA[[name_en]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([type] = 'neighbourhood')</Filter>
+    <Filter>([type] = 'hamlet')</Filter>
     <TextSymbolizer size="16" face-name="Quintessential Regular" fill="#775544" halo-fill="#fff8f0" halo-radius="2" wrap-before="true" wrap-width="80" minimum-distance="40" ><![CDATA[[name_en]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MinScaleDenominator>100000</MinScaleDenominator>
-    <Filter>([type] = 'neighbourhood')</Filter>
+    <Filter>([type] = 'hamlet')</Filter>
     <TextSymbolizer face-name="Quintessential Regular" fill="#775544" halo-fill="#fff8f0" halo-radius="2" wrap-before="true" wrap-width="80" minimum-distance="40" size="14" ><![CDATA[[name_en]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -1810,7 +1581,13 @@
 
 <Style name="poi_label" filter-mode="first">
   <Rule>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <Filter>([type] != 'Aerodrome') and ([type] != 'Rail Station') and ([localrank] &lt;= 1) and ([scalerank] = 1)</Filter>
+    <TextSymbolizer face-name="Gothic Ultra OT Regular" line-spacing="-5" fill="#443311" size="24" wrap-width="100" wrap-before="true" halo-fill="rgba(255, 248, 240, 0.6)" halo-radius="1.5" ><![CDATA[[name_en]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
     <Filter>([type] != 'Aerodrome') and ([type] != 'Rail Station') and ([localrank] &lt;= 1) and ([scalerank] = 1)</Filter>
     <TextSymbolizer face-name="Gothic Ultra OT Regular" line-spacing="-5" fill="#443311" size="24" wrap-width="100" wrap-before="true" halo-fill="rgba(255, 248, 240, 0.6)" halo-radius="1.5" ><![CDATA[[name_en]]]></TextSymbolizer>
   </Rule>
@@ -1821,18 +1598,26 @@
     <TextSymbolizer face-name="Gothic Ultra OT Regular" line-spacing="-5" fill="#443311" size="24" wrap-width="100" wrap-before="true" halo-fill="rgba(255, 248, 240, 0.6)" halo-radius="1.5" ><![CDATA[[name_en]]]></TextSymbolizer>
   </Rule>
   <Rule>
+    <MaxScaleDenominator>6500000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] != 'Aerodrome') and ([type] != 'Rail Station') and ([localrank] &lt;= 1) and ([scalerank] = 1)</Filter>
     <TextSymbolizer face-name="Gothic Ultra OT Regular" line-spacing="-5" fill="#443311" size="24" wrap-width="100" wrap-before="true" halo-fill="rgba(255, 248, 240, 0.6)" halo-radius="1.5" ><![CDATA[[name_en]]]></TextSymbolizer>
   </Rule>
   <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <Filter>([type] != 'Aerodrome') and ([type] != 'Rail Station') and ([scalerank] &lt;= 2) and ([localrank] &lt;= 1)</Filter>
+    <MaxScaleDenominator>12500</MaxScaleDenominator>
+    <Filter>([type] != 'Aerodrome') and ([type] != 'Rail Station') and ([localrank] &lt;= 1) and ([scalerank] &lt;= 2)</Filter>
     <TextSymbolizer face-name="Gothic Ultra OT Regular" line-spacing="-5" fill="#443311" size="24" wrap-width="100" wrap-before="true" halo-fill="rgba(255, 248, 240, 0.6)" halo-radius="1.5" ><![CDATA[[name_en]]]></TextSymbolizer>
   </Rule>
   <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <MinScaleDenominator>12500</MinScaleDenominator>
+    <Filter>([type] != 'Aerodrome') and ([type] != 'Rail Station') and ([localrank] &lt;= 1) and ([scalerank] &lt;= 2)</Filter>
+    <TextSymbolizer face-name="Gothic Ultra OT Regular" line-spacing="-5" fill="#443311" size="24" wrap-width="100" wrap-before="true" halo-fill="rgba(255, 248, 240, 0.6)" halo-radius="1.5" ><![CDATA[[name_en]]]></TextSymbolizer>
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>6500000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([type] != 'Aerodrome') and ([type] != 'Rail Station') and ([scalerank] &lt;= 2) and ([localrank] &lt;= 1)</Filter>
+    <Filter>([type] != 'Aerodrome') and ([type] != 'Rail Station') and ([localrank] &lt;= 1) and ([scalerank] &lt;= 2)</Filter>
     <TextSymbolizer face-name="Gothic Ultra OT Regular" line-spacing="-5" fill="#443311" size="24" wrap-width="100" wrap-before="true" halo-fill="rgba(255, 248, 240, 0.6)" halo-radius="1.5" ><![CDATA[[name_en]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -1841,23 +1626,25 @@
     <TextSymbolizer face-name="Gothic Ultra OT Regular" line-spacing="-5" fill="#443311" size="24" wrap-width="100" wrap-before="true" halo-fill="rgba(255, 248, 240, 0.6)" halo-radius="1.5" ><![CDATA[[name_en]]]></TextSymbolizer>
   </Rule>
   <Rule>
+    <MaxScaleDenominator>6500000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] != 'Aerodrome') and ([type] != 'Rail Station') and ([scalerank] &lt;= 3) and ([localrank] &lt;= 1)</Filter>
     <TextSymbolizer face-name="Gothic Ultra OT Regular" line-spacing="-5" fill="#443311" size="24" wrap-width="100" wrap-before="true" halo-fill="rgba(255, 248, 240, 0.6)" halo-radius="1.5" ><![CDATA[[name_en]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MaxScaleDenominator>5000</MaxScaleDenominator>
-    <Filter>([type] != 'Aerodrome') and ([type] != 'Rail Station') and ([localrank] &lt;= 3)</Filter>
+    <Filter>([type] != 'Aerodrome') and ([type] != 'Rail Station') and ([localrank] &lt;= 1)</Filter>
     <TextSymbolizer face-name="Gothic Ultra OT Regular" line-spacing="-5" fill="#443311" size="24" wrap-width="100" wrap-before="true" halo-fill="rgba(255, 248, 240, 0.6)" halo-radius="1.5" ><![CDATA[[name_en]]]></TextSymbolizer>
   </Rule>
   <Rule>
+    <MaxScaleDenominator>6500000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([type] != 'Aerodrome') and ([type] != 'Rail Station') and ([localrank] &lt;= 3)</Filter>
+    <Filter>([type] != 'Aerodrome') and ([type] != 'Rail Station') and ([localrank] &lt;= 1)</Filter>
     <TextSymbolizer face-name="Gothic Ultra OT Regular" line-spacing="-5" fill="#443311" size="24" wrap-width="100" wrap-before="true" halo-fill="rgba(255, 248, 240, 0.6)" halo-radius="1.5" ><![CDATA[[name_en]]]></TextSymbolizer>
   </Rule>
   <Rule>
-    <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([type] != 'Aerodrome') and ([type] != 'Rail Station')</Filter>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <Filter>([type] != 'Aerodrome') and ([type] != 'Rail Station') and ([localrank] &lt;= 3)</Filter>
     <TextSymbolizer face-name="Gothic Ultra OT Regular" line-spacing="-5" fill="#443311" size="24" wrap-width="100" wrap-before="true" halo-fill="rgba(255, 248, 240, 0.6)" halo-radius="1.5" ><![CDATA[[name_en]]]></TextSymbolizer>
   </Rule>
 </Style>
@@ -1867,13 +1654,13 @@
 
 <Style name="road_label" filter-mode="first">
   <Rule>
-    <MaxScaleDenominator>50000</MaxScaleDenominator>
-    <Filter>([class] = 'main')</Filter>
+    <MaxScaleDenominator>200000</MaxScaleDenominator>
+    <Filter>([class] = 'motorway')</Filter>
     <TextSymbolizer face-name="Gothic Ultra OT Regular" fill="#665544" placement="line" avoid-edges="true" halo-fill="#fff8f0" halo-radius="2" size="18" ><![CDATA[[name_en]]]></TextSymbolizer>
   </Rule>
   <Rule>
-    <MaxScaleDenominator>200000</MaxScaleDenominator>
-    <Filter>([class] = 'motorway')</Filter>
+    <MaxScaleDenominator>50000</MaxScaleDenominator>
+    <Filter>([class] = 'main')</Filter>
     <TextSymbolizer face-name="Gothic Ultra OT Regular" fill="#665544" placement="line" avoid-edges="true" halo-fill="#fff8f0" halo-radius="2" size="18" ><![CDATA[[name_en]]]></TextSymbolizer>
   </Rule>
   <Rule>
@@ -1886,6 +1673,10 @@
     <StyleName>road_label</StyleName>  </Layer>
 
 <Layer name="waterway_label"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+      </Layer>
+
+<Layer name="housenum_label"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
       </Layer>
 

@@ -21,13 +21,8 @@
   }
 }
 
-#country_label_line {
-  line-color: #324;
-  line-opacity: 0.2;
-}
-
-#poi_label[type!='Aerodrome'][type!='Rail Station'] {
-  [zoom<14],
+#poi_label[zoom>=7][type!='Aerodrome'][type!='Rail Station'] {
+  [zoom<14][localrank<=1],
   [zoom>=14][scalerank=1][localrank<=1],
   [zoom>=15][scalerank<=2][localrank<=1],
   [zoom>=16][scalerank<=3][localrank<=1],
@@ -59,56 +54,51 @@
   }
 }
 
-#place_label[type='city'][zoom<=14] {
+#place_label[type='city'][zoom<=14][localrank<=2] {
   text-name: @name_arrr;
   text-face-name: 'Quintessential Regular';
   text-fill: #421;
   text-halo-fill: @land;
   text-halo-radius: 3;
-  text-size:14;
-  [zoom<=6] {
-    [scalerank>=0][scalerank<=1] { text-size: 22; }
+  [zoom>=3] {
+    text-size:10;
+    [scalerank>=0][scalerank<=1] { text-size: 16; }
+    [scalerank>=2][scalerank<=3] { text-size: 14; }
+    [scalerank>=4] { text-size: 12; }
+  }
+  [zoom>=5] {
+    text-size:12;
+    [scalerank>=0][scalerank<=1] { text-size: 18; }
+    [scalerank>=2][scalerank<=3] { text-size: 17; }
+    [scalerank>=4] { text-size: 14; }
+  }
+  [zoom>=6] {
+    text-size:14;
+    [scalerank>=0][scalerank<=1] { text-size: 20; }
     [scalerank>=2][scalerank<=3] { text-size: 18; }
     [scalerank>=4] { text-size: 16; }
   }
-  [zoom=7] {
-    [scalerank>=0][scalerank<=1] { text-size: 24; }
-    [scalerank>=2][scalerank<=3] { text-size: 20; }
-    [scalerank>=4] { text-size: 18; }
-  }
-  [zoom=8] {
+  [zoom>=8] {
   	text-size: 16;
     [scalerank>=0][scalerank<=1] { text-size: 28; }
     [scalerank>=2][scalerank<=3] { text-size: 24; }
     [scalerank>=4] { text-size: 20; }
   }
-  [zoom=9] {
-    text-size: 20;
-    [scalerank>=0][scalerank<=1] { text-size: 30; }
-    [scalerank>=2][scalerank<=3] { text-size: 26; }
-    [scalerank>=4] { text-size: 24; }
-  }
-  [zoom=10] {
+  [zoom>=10] {
     text-size: 22;
     [scalerank>=0][scalerank<=1] { text-size: 32; }
     [scalerank>=2][scalerank<=3] { text-size: 28; }
     [scalerank>=4] { text-size: 26; }
   }
-  [zoom=11] {
-    text-size: 26;
-    [scalerank>=0][scalerank<=1] { text-size: 34; }
-    [scalerank>=2][scalerank<=3] { text-size: 32; }
-    [scalerank>=4] { text-size: 30; }
-  }
-  [zoom=12] {
+  [zoom>=12] {
     text-size: 28;
     [scalerank<=3] { text-size: 36; }
     [scalerank>=4] { text-size: 32; }
   }
-  [zoom=13] {
+  [zoom>=13] {
     text-size: 36;
   }
-  [zoom=14] {
+  [zoom>=14] {
     text-size: 40;
   }
 }
@@ -175,94 +165,49 @@
   text-size: 18;
 }
 
-@marine_text: #244;
-@mts: 2;
-#marine_label::text[zoom>=0][zoom<=7] {
+@mts: 1.5;
+#marine_label::text[zoom>=2]["mapnik::geometry_type"=1],
+#marine_label::text[zoom>=2]["mapnik::geometry_type"=2] {
   text-name: @name_arrr;
   text-face-name: 'Mutlu  Ornamental';
-  text-fill: @marine_text;
-  text-wrap-width: 80;
-  text-wrap-before: true;
-  //text-comp-op: color-burn;
-  [placement = 'point'] {
+  text-fill: #244;
+  text-size: 10*@mts;
+  ["mapnik::geometry_type"=1] {
     text-placement: point;
+    text-wrap-width: 30;
+    text-line-spacing: -10;
   }
-  [placement = 'line'] {
+  ["mapnik::geometry_type"=2] {
     text-placement: line;
-    text-avoid-edges: true;
-    text-dy:10; // for Mutlu
   }
-  [labelrank = 1] {
-    [zoom = 3] {
-      text-size: 30;
-      text-character-spacing: 8;
-    }
-    [zoom = 4] {
-      text-size: 35;
-      text-character-spacing: 16;
-    }
-    [zoom = 5] {
-      text-size: 40;
-      text-character-spacing: 20;
-    }
+  [labelrank=1][zoom>=2],
+  [labelrank=2][zoom>=3],
+  [labelrank=3][zoom>=4],
+  [labelrank=4][zoom>=5],
+  [labelrank=5][zoom>=6],
+  [labelrank=6][zoom>=7] {
+    text-size: 13*@mts;
+    text-character-spacing: 1;
   }
-  [labelrank = 2] {
-    [zoom = 3] {
-      text-size: 18;
-      text-character-spacing: 1;
-    }
-    [zoom = 4] {
-      text-size: 24;
-      text-character-spacing: 2;
-    }
-    [zoom = 5] {
-      text-size: 30;
-      text-character-spacing: 4;
-    }
-    [zoom = 6] {
-      text-size: 35;
-      text-character-spacing: 5;
-    }
-  }
-  [labelrank = 3] {
-    [zoom = 3] {
-      text-size: 14;
-      text-character-spacing: 2;
-      text-line-spacing: -10;
-    }
-    [zoom = 4] {
-      text-size: 18;
-      text-character-spacing: 3;
-      text-line-spacing: -10;
-    }
-    [zoom = 5] {
-      text-size: 25;
-      text-character-spacing: 4;
-      text-line-spacing: -10;
-    }
-    [zoom = 6] {
-      text-size: 18;
-      text-character-spacing: 5;
-    }
-  }
-  [labelrank = 4][zoom = 4],
-  [labelrank = 5][zoom = 5],
-  [labelrank = 6][zoom = 6] {
-    text-size: 12;
+  [labelrank=1][zoom>=3],
+  [labelrank=2][zoom>=4],
+  [labelrank=3][zoom>=5],
+  [labelrank=4][zoom>=6],
+  [labelrank=5][zoom>=7],
+  [labelrank=6][zoom>=8] {
+    text-size: 16*@mts;
     text-character-spacing: 2;
-    text-line-spacing: 6;
   }
-  [labelrank = 4][zoom = 5],
-  [labelrank = 5][zoom = 6],
-  [labelrank = 6][zoom = 7] {
-    text-size: 14;
-    text-character-spacing: 3;
-    text-line-spacing: 8;
-  }
-  [labelrank = 4][zoom = 6],
-  [labelrank = 5][zoom = 7] {
-    text-size: 16;
+  [labelrank=1][zoom>=4],
+  [labelrank=2][zoom>=5],
+  [labelrank=3][zoom>=6] {
+    text-size: 20*@mts;
     text-character-spacing: 4;
-    text-line-spacing: 1;
+  }
+  [labelrank=1][zoom>=5],
+  [labelrank=2][zoom>=6],
+  [labelrank=3][zoom>=7] {
+    text-size: 24*@mts;
+    text-character-spacing: 8;
   }
 }
