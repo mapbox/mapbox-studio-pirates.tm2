@@ -6,7 +6,7 @@
   <Parameter name="attribution"><![CDATA[<a href='http://mapbox.com/about/maps' target='_blank'>Terms & Feedback</a>]]></Parameter>
   <Parameter name="bounds">-180,-85.0511,180,85.0511</Parameter>
   <Parameter name="center">-82.9688,16.8466,4</Parameter>
-  <Parameter name="format">png8:m=h</Parameter>
+  <Parameter name="format">png8:m=h:c=192</Parameter>
   <Parameter name="maxzoom">21</Parameter>
   <Parameter name="minzoom">0</Parameter>
   <Parameter name="name"><![CDATA[Pirates Return]]></Parameter>

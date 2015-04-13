@@ -12,7 +12,7 @@ center:
   - 16.8466
   - 4
 description: ''
-format: "png8:m=h"
+format: "png8:m=h:c=192"
 interactivity_layer: ''
 layers: null
 maxzoom: 21
