@@ -1,6 +1,6 @@
 {
-    "name": "mapbox-studio-pirates",
-    "version": "2.0.3",
-    "description": "Default style project for Mapbox Studio.",
-    "main": "./package.json"
+  "name": "@mapbox/mapbox-studio-pirates",
+  "version": "2.0.3",
+  "description": "Default style project for Mapbox Studio.",
+  "main": "./package.json"
 }
